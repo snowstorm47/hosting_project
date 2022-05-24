@@ -16,7 +16,7 @@ const AdminHome = () => {
   };
   return (
     <div className="grid grid-cols-5 min-h-screen h-screen overflow-hidden">
-      <div className="bg-blue-900">
+      <div className="bg-blue-700 ">
         <Nav />
       </div>
       <div className="overflow-y-scroll  col-span-4 bg-gray-100">

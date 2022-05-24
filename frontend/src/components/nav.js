@@ -7,7 +7,7 @@ const Nav = () => {
   return (
     <div>
       <div className="flex items-center justify-center p-5">
-        <img src={logo} className="h-32 w-32 " />
+        <img src={logo} className="h-32 w-32 mt-10  " />
       </div>
       <div className="flex flex-col space-y-1 mt-14 text-white">
         <button
@@ -17,8 +17,8 @@ const Nav = () => {
           }}
         >
           <div
-            className={`border-r-4 border-r-blue-900 p-2 flex space-x-2 items-center  ${
-              selected === 0 && "border-r-blue-50  bg-blue-800 "
+            className={`border-r-4 border-r-blue-500 p-2 flex space-x-2 items-center  ${
+              selected === 0 && "border-r-blue-50  bg-blue-900 "
             } `}
           >
             <span>
@@ -41,8 +41,8 @@ const Nav = () => {
           }}
         >
           <div
-            className={`border-r-4 border-r-blue-900 p-2 flex space-x-2 items-center  ${
-              selected === 1 && "border-r-blue-50  bg-blue-800 "
+            className={`border-r-4 border-r-blue-500 p-2 flex space-x-2 items-center  ${
+              selected === 1 && "border-r-blue-50  bg-blue-900"
             } `}
           >
             <span>

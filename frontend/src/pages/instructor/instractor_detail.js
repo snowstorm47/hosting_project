@@ -27,23 +27,24 @@ const InstractorDetail = () => {
         />
       </Modal>
       <Modal open={loading}>
-        <div className="bg-black bg-opacity-40 h-screen w-screen absolute flex items-center justify-center z-40">
+        <div className="bg-black bg-opacity-40 h-screen w-screen absolute flex items-center justify-center z-40 shadow-lg">
           <PulseLoader color="white" />
         </div>
       </Modal>
       {data && (
-        <div className="mt-3 space-y-6">
-          <div className="bg-white">
-            <div className="font-bold text-lg mb-3 bg-blue-900 text-white p-1">
-              Basic Infomation
+        <div className="mt-3 space-y-6 drop-shadow-lg rounded-lg">
+          <div className="font-bold text-lg mb-3 bg-blue-900 text-white p-1">
+              General Infomation
             </div>
+          <div className="bg-white drop-shadow-lg rounded-lg">
+            
             <div className="flex p-7">
               <img
                 className="h-36 w-36 object-cover mr-4"
                 src={`${baseURL}/images/${data.photo}`}
               />
               <div className="grid grid-cols-2 gap-x-2 capitalize">
-                <div className="flex space-x-2">
+                <div className="flex space-x-4">
                   <label className="font-semibold capitalize">
                     First Name :
                   </label>
@@ -92,10 +93,12 @@ const InstractorDetail = () => {
               </div>
             </div>
           </div>
-          <div className="bg-white">
-            <div className="font-bold text-lg mb-3 bg-blue-900 text-white p-1">
+
+          <div className="font-bold text-lg mb-3 bg-blue-900 text-white p-1">
               Educational Infomation
             </div>
+          <div className="bg-white drop-shadow-lg rounded-lg">
+          
             <div className="p-7">
               <div className="flex space-x-2">
                 <label className="font-semibold capitalize">
@@ -158,23 +161,25 @@ const InstractorDetail = () => {
               </div>
             </div>
           </div>
-
-          <div className="bg-white">
-            <div className="font-bold text-lg mb-3 bg-blue-900 text-white p-1">
+          
+          <div className="font-bold text-lg mb-3 bg-blue-900 text-white p-1">
               Contact Infomation
-            </div>
+            </div>      
+
+          <div className="bg-white drop-shadow-lg rounded-lg">
+           
             <div className="px-4 py-1">
-              <div className="flex space-x-2">
+              <div className="flex space-x-2 pt-5 pb-2">
                 <label className="font-semibold capitalize">Email :</label>
                 <span>{data.email}</span>
               </div>
-              <div className="flex space-x-2">
+              <div className="flex space-x-2 pb-2">
                 <label className="font-semibold capitalize">
                   Phone Number One :
                 </label>
                 <span>{data.coach_phone_one}</span>
               </div>
-              <div className="flex space-x-2">
+              <div className="flex space-x-2 pb-5">
                 <label className="font-semibold capitalize">
                   Phone Number Two :
                 </label>

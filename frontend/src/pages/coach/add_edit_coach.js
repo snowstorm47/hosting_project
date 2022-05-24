@@ -171,14 +171,14 @@ const AddEditCoach = () => {
         />
       </Modal>
       <Modal open={addCoachLoading}>
-        <div className="bg-black bg-opacity-40 h-screen w-screen absolute flex items-center justify-center z-40">
-          <PulseLoader color="white" />
+        <div className="bg-black bg-opacity-40  h-screen w-screen absolute flex items-center justify-center">
+          <PulseLoader color="blue" />
         </div>
       </Modal>
 
       <div className="p-7 space-y-4">
         <div className="uppercase tracking-widest my-2 font-semibold text-sm">
-          add coach
+          Add Coach
         </div>
         <div className="p-7 bg-white">
           <div className="capitalize my-2 font-semibold text-lg">

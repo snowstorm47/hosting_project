@@ -33,13 +33,13 @@ const Instractors = () => {
       </Modal>
       <Modal open={loading}>
         <div className="bg-black bg-opacity-40 h-screen w-screen absolute flex items-center justify-center z-40">
-          <PulseLoader color="white" />
+          <PulseLoader color="blue" />
         </div>
       </Modal>
       <div className="p-7 space-y-4">
         <div className="flex justify-end">
           <button
-            className="px-2 py-1 bg-blue-900 text-white rounded-md space-x-2 flex items-center"
+            className="px-2 py-1  bg-gradient-to-r from-green-400 to-blue-500 text-white rounded-md space-x-2 flex items-center"
             onClick={() => navigate("/admin/instructors/new")}
           >
             <span>
@@ -60,10 +60,13 @@ const Instractors = () => {
           </button>
         </div>
 
-        <div className="bg-white p-7">
+        <div className="bg-white p-7 shadow-lg rounded-lg">
           <div className="my-2">
-            <div className="px-2 py-1 border rounded-lg flex space-x-2 w-fit">
-              <span>education</span>
+            <div className="pl-2">
+          <span>Educational Status</span>
+          </div>
+            <div className="px-2 py-1 border rounded-md shadow-sm flex space-x-2 w-fit mb-8">
+              
               <select
                 className="border-0 outline-none bg-white"
                 value={education}
@@ -78,14 +81,14 @@ const Instractors = () => {
               </select>
             </div>
           </div>
-          <table className="w-full border border-collapse p-2">
+          <table className="w-full p-2 shadow-md rounded-lg">
             <thead>
               <tr>
-                <td></td>
-                <td className="font-semibold capitalize py-1">first name</td>
-                <td className="font-semibold capitalize py-1">middle name</td>
-                <td className="font-semibold capitalize py-1">last name</td>
-                <td className="font-semibold capitalize py-1">gender</td>
+                <td className="border-b"></td>
+                <td className="font-semibold capitalize py-1 border-b pb-4">first name</td>
+                <td className="font-semibold capitalize py-1 border-b pb-4">middle name</td>
+                <td className="font-semibold capitalize py-1 border-b pb-4">last name</td>
+                <td className="font-semibold capitalize py-1 border-b pb-4">gender</td>
               </tr>
             </thead>
             <tbody className="text-sm">
@@ -97,7 +100,7 @@ const Instractors = () => {
                       navigate(`/admin/instructors/${instructor.id}/detail`)
                     }
                   >
-                    <td className="p">
+                    <td className="p border-b py-2">
                       <div className="flex items-center justify-center">
                         <img
                           className="h-14 w-14 rounded-full object-cover"
@@ -105,10 +108,10 @@ const Instractors = () => {
                         />
                       </div>
                     </td>
-                    <td>{instructor.first_name}</td>
-                    <td>{instructor.middle_name}</td>
-                    <td>{instructor.last_name}</td>
-                    <td>{instructor.gender}</td>
+                    <td className=" border-b ">{instructor.first_name}</td>
+                    <td className=" border-b ">{instructor.middle_name}</td>
+                    <td className=" border-b ">{instructor.last_name}</td>
+                    <td className=" border-b ">{instructor.gender}</td>
                   </tr>
                 );
               })}
