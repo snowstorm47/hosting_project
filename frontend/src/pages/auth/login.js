@@ -4,7 +4,7 @@ import Dialog from "../../components/dialog";
 import Modal from "../../components/modal";
 import logo from "../../images/logo.png";
 import { login, resetLogin } from "../../store/auth/actions";
-import { PropagateLoader, PulseLoader } from "react-spinners";
+import { PulseLoader } from "react-spinners";
 import { useNavigate } from "react-router-dom";
 const Login = () => {
   const navigate = useNavigate();
@@ -28,7 +28,7 @@ const Login = () => {
 
 
   return (
-    <div className="flex min-h-screen min-w-full">
+    <div className="flex justify-center mt-16">
       <Modal open={error}>
         <Dialog
           severity="failure"
@@ -37,17 +37,16 @@ const Login = () => {
         />
       </Modal>
       <Modal open={loading}>
-        <div className="bg-black bg-opacity-40 h-screen w-screen absolute flex items-center justify-center">
-          <PulseLoader color="white" />
+        <div className=" h-1/2 w-screen absolute flex flex-col items-center justify-center mt-32">
+          <PulseLoader color="blue" />
         </div>
       </Modal>
-      <div className="bg-blue-900 w-1/2" />
       <div className="flex flex-col justify-center">
-        <form className="space-y-2 ml-8" onSubmit={onSubmitHandler}>
-          <img src={logo} className="h-20 w-20" />
-          <div className="flex flex-col space-y-1">
-            <label>username</label>
-            <div className="flex space-x-2 border rounded-lg items-center p-2">
+        <form className="space-y-2 ml-8 py-8 px-16 border rounded-3xl shadow-md " onSubmit={onSubmitHandler}>
+          <img src={logo} className="h-40 w-40 ml-16 mb-10" />
+          <div className="flex flex-col space-y-1 mb-5">
+            <label className="pl-2">Username</label>
+            <div className="flex space-x-2 border rounded-lg items-center p-3 mr-2">
               <span>
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -64,7 +63,7 @@ const Login = () => {
               </span>
               <input
                 type="text"
-                className="outline-none"
+                className="outline-none pl-4 pr-6"
                 placeholder="enter your username"
                 value={username}
                 onChange={(e) => setUsername(e.target.value)}
@@ -72,8 +71,8 @@ const Login = () => {
             </div>
           </div>
           <div className="flex flex-col space-y-1">
-            <label>password</label>
-            <div className="flex space-x-2 border rounded-lg items-center p-2">
+            <label className="pl-2 mt-3">Password</label>
+            <div className="flex space-x-2 border rounded-lg items-center p-3">
               <span>
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -90,14 +89,16 @@ const Login = () => {
               </span>
               <input
                 type="password"
-                className="outline-none"
+                className="outline-none pl-4 pr-6"
                 placeholder="enter your password"
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
               />
             </div>
           </div>
-          <button className="bg-blue-900 rounded-md px-3 py-1 text-blue-50">login</button>
+          <div className="mt-4">
+          <button className="bg-blue-900 hover:bg-violet-600 rounded-md px-6 py-2 mt-4 ml-4 text-blue-50">login</button>
+          </div>
         </form>
       </div>
     </div>
